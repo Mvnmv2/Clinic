@@ -47,7 +47,6 @@ import TheButton from '@/UI/TheButton.vue'
 
       <div class="calculator-slide_1">
 
-
         <div class="calculator-title">
           Сколько зубов нуждаются в лечении?
         </div>
@@ -177,15 +176,8 @@ import TheButton from '@/UI/TheButton.vue'
   border-radius: 20px;
   width: 100%;
 
-  //padding: 82px 0 74px 90px;
-
   padding-top: 82px;
   padding-bottom: 90px;
-
-  //display: flex;
-  //flex-direction: column;
-  //justify-content: center;
-  //align-items: center;
 
   text-align: center;
 
@@ -202,6 +194,7 @@ import TheButton from '@/UI/TheButton.vue'
   }
 
   &-body {
+
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);

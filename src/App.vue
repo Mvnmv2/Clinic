@@ -7,7 +7,7 @@ import Specializations from "@/components/Specializations.vue";
 import ThreeCardsSlider from "@/components/ThreeCardsSlider/ThreeCardsSlider.vue";
 import TheCalculator from "@/components/Calculator/TheCalculator.vue";
 import LoveBlock from "@/components/LoveBlock.vue";
-import TheCommand from "@/components/TheCommand.vue";
+import TheCommand from "@/components/TheComand/TheCommand.vue";
 import PremiumBlock from "@/components/PremiumBlock.vue";
 import StoriesBlock from "@/components/StoriesBlock.vue";
 import FormVisitBlock from "@/components/FormVisitBlock.vue";
@@ -50,15 +50,17 @@ onUnmounted(() => {
 
       <ThreeCardsSlider/>
 
+      <!--      <SliderOne/>-->
+
       <TheCalculator :width='width' :onResize="onResize"/>
 
-<!--            <LoveBlock/>-->
+      <LoveBlock :width='width' :onResize="onResize"/>
 
-<!--            <TheCommand/>-->
+      <TheCommand/>
 
-      <!--      <PremiumBlock/>-->
+      <PremiumBlock/>
 
-      <!--      <StoriesBlock/>-->
+      <StoriesBlock/>
 
       <!--      <FormVisitBlock/>-->
 
@@ -80,7 +82,7 @@ onUnmounted(() => {
 
   <!--    <PopularQuestionsBlock/>-->
 
-  <!--    <Accordion/>-->
+<!--      <Accordion/>-->
 
   <!--    <MoreDetailsBlock/>-->
 
@@ -112,6 +114,9 @@ onUnmounted(() => {
   //padding-left: calc(11% - 45px);
   //padding-right: calc(11% - 45px);
   margin: 0 auto;
+
+  overflow: hidden;
+
 
   @include _1170 {
     padding: 0 24px 0;

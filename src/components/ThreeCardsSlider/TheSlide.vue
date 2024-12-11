@@ -9,15 +9,14 @@ defineProps({
 </script>
 
 <template>
-
   <div class="card-item">
     <div class="content">
       <div class="content-description">
         <div class="content-description__title">
-          {{title}}
+          {{ title }}
         </div>
         <div class="content-description__subTitle">
-          {{description}}
+          {{ description }}
         </div>
       </div>
       <div class="content-img">
@@ -31,24 +30,19 @@ defineProps({
 <style lang="scss" scoped>
 
 .card-item {
+
   background-color: #F7F9FC;
   border-radius: 20px;
   padding: 40px 32px 0 32px;
-
 }
 
-.content {
-
-  &-img {
-
+.content-img {
     img {
       display: block;
       max-width: 163px;
       width: 100%;
     }
-  }
 }
-
 .content-description {
 
   &__title {
@@ -57,7 +51,6 @@ defineProps({
     line-height: 1.2;
     font-weight: 500;
     margin-bottom: 24px;
-
   }
 
   &__subTitle {
@@ -65,10 +58,6 @@ defineProps({
     font-size: 15px;
     line-height: 1.3;
     margin-bottom: 54px;
-
-
-
-
   }
 }
 

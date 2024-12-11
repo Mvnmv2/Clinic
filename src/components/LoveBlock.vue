@@ -1,12 +1,16 @@
 <script setup>
 
+defineProps({
+  width: Number,
+})
+
 </script>
 
 <template>
   <div class="loveBlock">
     <div class="loveBlock__text">
       <div class="loveBlock__text-title">
-        Ami Clinic создана <span>с любовью</span>
+        Ami Clinic<br v-if="width < 901" > создана <span>с любовью</span>
       </div>
       <p>В 2016 году я привез технологию All-on-4 в Россию,
         сделав ставку на инновацию. Мне говорили: “Ничего не получится!”
@@ -60,8 +64,20 @@
   align-items: center;
   margin-bottom: 67px;
 
+  @include _900 {
+    flex-direction: column;
+  }
+
 
   &__text {
+
+    @include _900 {
+      padding: 0 110px;
+    }
+
+    @include _768 {
+      padding: 0 25px;
+    }
 
     &-title {
       font-size: 50px;
@@ -73,6 +89,11 @@
       span {
         color: $primary-color;
       }
+
+      @include _768 {
+        font-size: 43px;
+        text-align: center;
+      }
     }
 
     p {
@@ -80,6 +101,10 @@
       line-height: 1.5;
       color: #384450;
       max-width: 560px;
+
+      @include _900 {
+        max-width: 100%;
+      }
     }
 
     p:first-of-type {
@@ -88,26 +113,53 @@
 
     p:last-of-type {
       margin-bottom: 48px;
+
+      @include _768 {
+        margin-bottom: 40px;
+      }
     }
   }
 
   &__img {
+
+    @include _900 {
+      order: -1;
+    }
+
     img {
       display: block;
       max-width: 518px;
+
+      @include _900 {
+        max-width: 488px;
+      }
+
+      @include _768 {
+        max-width: 345px;
+      }
     }
   }
 
   &__text-cards {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     max-width: 78%;
+
+    @include _900 {
+      row-gap: 32px;
+      max-width: 100%;
+    }
 
     &-item--title {
       font-size: 35px;
       font-weight: 700;
       line-height: 1.15;
       color: #111C27;
+
+      @include _768 {
+        font-size: 33px;
+      }
     }
 
     &-item--descr {

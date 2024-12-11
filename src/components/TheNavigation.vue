@@ -8,6 +8,7 @@ const props = defineProps({
 
 const openBurger = ref(false)
 
+
 function onClick(event) {
   let elem = event.target
   openBurger.value = true
@@ -27,7 +28,8 @@ function closeBurger(event) {
         :class="['burger__openBtn', burger ? 'burger__openBtn-open' : '']"
         @click="onClick"
 
-    >Меню<span></span></div>
+    >Меню<span></span>
+    </div>
 
     <ul :class="['nav-list', burger ? 'burger' : '', openBurger ? 'burger-open' : 'burger-close']"
 
@@ -81,7 +83,10 @@ function closeBurger(event) {
 @import "@/assets/scss/variables";
 
 .nav {
+
   width: 100%;
+
+  overflow: hidden;
 
   &-list {
     display: flex;
@@ -152,6 +157,7 @@ function closeBurger(event) {
 .nav-list.burger {
 
   display: flex;
+  flex-direction: column;
 
   transition: .2s linear;
 
@@ -163,7 +169,6 @@ function closeBurger(event) {
   z-index: 2;
   top: 5px;
   right: 24px;
-  flex-direction: column;
 
   background-color: #30B5DF;
   border-radius: 8px;
@@ -184,7 +189,6 @@ function closeBurger(event) {
 
   &.burger-open {
 
-
     transform: translateX(0);
     visibility: visible;
 
@@ -193,9 +197,7 @@ function closeBurger(event) {
   &.burger-close {
     transform: translateX(100%);
     visibility: hidden;
-
   }
-
 }
 
 .burger__openBtn {

@@ -26,6 +26,7 @@ const handleClick = id => emit('toggleAnswer', id)
 
 .accordionBlock__item {
 
+
   width: calc(50% - 24px);
 
   &-title {
@@ -51,9 +52,11 @@ const handleClick = id => emit('toggleAnswer', id)
     height: 0;
     overflow-y: auto;
     transition: height .5s;
+
+    border-bottom: 1px solid #D1D5DB;
+
   }
 
-  border-bottom: 1px solid #D1D5DB;
 }
 
 .active {

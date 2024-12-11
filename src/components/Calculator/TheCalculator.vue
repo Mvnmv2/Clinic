@@ -1,5 +1,7 @@
 <script setup>
+
 import CalculatorWidthMore1000 from "./CalculatorWidthMore1000.vue";
+import CalculatorWidthMore660 from "./CalculatorWidthMore660.vue";
 import CalculatorWidthMore360 from "./CalculatorWidthMore360.vue";
 
 defineProps({
@@ -19,8 +21,9 @@ defineProps({
 
   <CalculatorWidthMore1000 v-if="width > 1000"/>
 
-  <CalculatorWidthMore360 v-else/>
+  <CalculatorWidthMore660 v-else-if="width > 660"/>
 
+  <CalculatorWidthMore360 v-else />
 
 </template>
 

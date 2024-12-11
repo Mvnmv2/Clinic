@@ -28,6 +28,7 @@ defineProps({
 
 .header {
 
+
   padding: 25px 0;
   background-color: $white;
 

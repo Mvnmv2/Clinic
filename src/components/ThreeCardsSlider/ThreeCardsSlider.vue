@@ -3,7 +3,7 @@ import {register} from 'swiper/element/bundle';
 
 register();
 
-import {Swiper, SwiperSlide} from 'swiper/vue';
+import {SwiperSlide} from 'swiper/vue';
 import TheSlide from './TheSlide.vue'
 
 import 'swiper/scss';
@@ -38,6 +38,9 @@ const slideData = [
         class="swiper"
         slides-per-view="3"
         space-between="16"
+        :pagination="{
+      hideOnClick: true
+    }"
         :breakpoints="{
     300: {
       slidesPerView: 1,
@@ -51,7 +54,7 @@ const slideData = [
   },
     }"
     >
-      <swiper-slide v-for="(slide, index) in slideData">
+      <swiper-slide v-for="(slide) in slideData">
         <TheSlide class="slide"
                   :title="slide.title"
                   :description="slide.description"
