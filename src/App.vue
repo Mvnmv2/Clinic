@@ -60,9 +60,9 @@ onUnmounted(() => {
 
       <PremiumBlock/>
 
-      <StoriesBlock/>
+      <StoriesBlock :width='width'/>
 
-      <!--      <FormVisitBlock/>-->
+<!--            <FormVisitBlock/>-->
 
       <!--      <SuspicionBlock/>-->
 

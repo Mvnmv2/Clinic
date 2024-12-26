@@ -1,6 +1,10 @@
 <script setup>
 import TheButton from '../UI/TheButton.vue';
 
+defineProps({
+  width: Number,
+})
+
 </script>
 
 <template>
@@ -28,7 +32,8 @@ import TheButton from '../UI/TheButton.vue';
   <div class="stories-slider">
     <div class="stories-slider__card">
       <div class="stories-slider__card-left">
-        <img src="../assets/images/stories/1.jpeg" alt="card photo">
+        <img v-if="width > 1100" src="../assets/images/stories/1.jpeg" alt="card photo">
+        <img v-else src="../assets/images/stories/3.jpeg" alt="card photo">
       </div>
       <div class="stories-slider__card-right">
         <div class="stories-slider__card-right__title">Лечение переодонтида</div>
@@ -71,6 +76,8 @@ import TheButton from '../UI/TheButton.vue';
 </template>
 
 <style scoped lang="scss">
+@import "@/assets/scss/variables.scss";
+
 
 .stories-title {
   font-size: 42px;
@@ -81,6 +88,11 @@ import TheButton from '../UI/TheButton.vue';
   span {
     color: #16A3D0;
   }
+
+  @include _1100 {
+    font-size: 32px;
+    margin-bottom: 16px;
+  }
 }
 
 .stories-sup__title {
@@ -88,12 +100,21 @@ import TheButton from '../UI/TheButton.vue';
   color: #111C27;
   line-height: 120%;
   margin-bottom: 32px;
+
+  @include _1100 {
+    font-size: 12px;
+    margin-bottom: 24px;
+  }
 }
 
 .stories__buttons-list {
   display: flex;
   gap: 8px;
   margin-bottom: 40px;
+
+  @include _1100 {
+    margin-bottom: 24px;
+  }
 }
 
 .stories-slider {
@@ -101,15 +122,25 @@ import TheButton from '../UI/TheButton.vue';
   max-height: 558px;
   margin-bottom: 110px;
 
+  @include _1100 {
+    max-height: none;
+  }
+
   &__card {
     display: flex;
     column-gap: 8px;
     padding-bottom: 40px;
 
+    @include _1100 {
+      flex-direction: column;
+      row-gap: 8px;
+      padding-bottom: 20px;
+
+    }
 
     &-left {
       img {
-        max-width: 439px;
+        width: 100%;
         display: block;
       }
     }
@@ -119,12 +150,17 @@ import TheButton from '../UI/TheButton.vue';
       flex-direction: column;
       justify-content: center;
       width: 100%;
-      padding-left: 56px;
-      padding-right: 48px;
+      padding: 15px 48px 15px 56px;
       border: 1px solid #D1D5DB;
       border-radius: 20px;
       background-color: #F9FAFB;
       color: #111C27;
+
+      @include _1100 {
+        padding-top: 64px;
+        padding-bottom: 77px;
+
+      }
 
       &__title {
         font-size: 24px;
@@ -164,6 +200,10 @@ import TheButton from '../UI/TheButton.vue';
     display: flex;
     justify-content: space-between;
     margin-bottom: 110px;
+
+    @include _1100 {
+      margin-bottom: 80px;
+    }
 
     &_pagination {
       color: #6B7680;

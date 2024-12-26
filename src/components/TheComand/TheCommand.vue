@@ -145,7 +145,16 @@ const slides = [
           prevEl: '.swiper-button-prev',
           }"
         :pagination="{
-         el: '.pagination',
+          el: '.swiper-pagination',
+          type: 'progressbar',
+          // renderCustom: function(swiper, current, total) {
+          //   return '<span>' + current + ' из ' + total + '</span>'
+          // }
+
+          // renderProgressbar: function(progressbarFillClass){
+          //    return '<span class=' + progressbarFillClass + '></span>';
+          // }
+
         }"
 
     >
@@ -158,7 +167,7 @@ const slides = [
     <div class="swiper-pagination"></div>
 
     <div class="command__menage-block">
-      <div class="command__menage-block_pagination pagination">
+      <div class="command__menage-block_pagination">
         1 из 20
       </div>
       <div class="command__menage-block_buttons">
