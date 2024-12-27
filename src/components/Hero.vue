@@ -145,7 +145,8 @@ defineProps({
   margin-bottom: 16px;
 
   @include _660 {
-    font-size: 14px;
+    font-size: 20px;
+    margin-bottom: 12px;
   }
 }
 
@@ -161,8 +162,8 @@ defineProps({
 
 .sub-sub-title {
   font-size: 15px;
+  line-height: 130%;
   color: #111C27;
-  line-height: 90%;
   font-weight: 400;
   margin-bottom: 24px;
 

@@ -3,10 +3,11 @@
 import TheButton from '../UI/TheButton.vue'
 </script>
 
-
 <template>
   <div class="formVisit">
-    <img class="doctor-imd" src="../assets/images/doctor.png" alt="doctor image">
+    <div class="doctor-imd">
+      <img  src="../assets/images/doctor.png" alt="doctor image">
+    </div>
     <div class="formVisitBlock">
       <div class="formVisitBlock__title">
         <span>Один визит</span> приблизит<br>
@@ -43,18 +44,44 @@ import TheButton from '../UI/TheButton.vue'
 </template>
 
 <style scoped lang="scss">
+@import "@/assets/scss/variables.scss";
 
 .formVisit {
   position: relative;
 }
 
 .doctor-imd {
-  display: block;
-  max-width: 550px;
-  position: absolute;
-  z-index: 5;
-  right: 0;
-  bottom: 0;
+
+  @include _768{
+    background-color: #F4F9FD;
+    border-radius: 24px 24px 0 0;
+  }
+
+  img {
+    display: block;
+    max-width: 550px;
+    position: absolute;
+    z-index: 5;
+    right: 0;
+    bottom: 0;
+
+    @include _1100 {
+      right: -13%;
+    }
+
+    @include _768{
+      position: static;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    @include _900 {
+      max-width: 490px;
+      right: -18%;
+    }
+  }
+
+
 }
 
 .formVisitBlock {
@@ -64,6 +91,20 @@ import TheButton from '../UI/TheButton.vue'
 
   margin-bottom: 104px;
 
+  @include _1170 {
+    padding: 45px 0 42px 36px;
+    margin-bottom: 100px;
+  }
+
+  @include _768 {
+    border-radius: 0 0 24px 24px;
+  }
+
+  @include _660 {
+    padding: 24px 16px 32px 24px;
+    margin-bottom: 80px;
+  }
+
   &__title {
 
     color: #111827;
@@ -71,6 +112,10 @@ import TheButton from '../UI/TheButton.vue'
     line-height: 1;
     font-weight: 700;
     margin-bottom: 16px;
+
+    @include _1100 {
+      font-size: 32px;
+    }
 
     span {
       color: #30B5DF;
@@ -81,10 +126,13 @@ import TheButton from '../UI/TheButton.vue'
     font-size: 17px;
     font-weight: 500;
     margin-bottom: 20px;
+
+    @include _1100 {
+      font-size: 15px;
+    }
   }
 
   &__list {
-
 
     padding-left: 16px;
 
@@ -92,7 +140,6 @@ import TheButton from '../UI/TheButton.vue'
       position: relative;
       margin-bottom: 20px;
       font-size: 15px;
-      //line-height: 1.5;
     }
 
     li:last-child {
@@ -129,6 +176,10 @@ import TheButton from '../UI/TheButton.vue'
   &__gift {
     display: flex;
     column-gap: 45px;
+
+    @include _1100 {
+      flex-direction: column;
+    }
 
     &--right, &--left {
       display: flex;

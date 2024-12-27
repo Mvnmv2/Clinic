@@ -78,7 +78,6 @@ defineProps({
 <style scoped lang="scss">
 @import "@/assets/scss/variables.scss";
 
-
 .stories-title {
   font-size: 42px;
   font-weight: 700;
@@ -102,13 +101,14 @@ defineProps({
   margin-bottom: 32px;
 
   @include _1100 {
-    font-size: 12px;
+    font-size: 14px;
     margin-bottom: 24px;
   }
 }
 
 .stories__buttons-list {
   display: flex;
+  flex-wrap: wrap;
   gap: 8px;
   margin-bottom: 40px;
 
@@ -120,10 +120,19 @@ defineProps({
 .stories-slider {
 
   max-height: 558px;
-  margin-bottom: 110px;
+  margin-bottom: 210px;
 
   @include _1100 {
     max-height: none;
+    margin-bottom: 110px;
+  }
+
+  @include _768 {
+    margin-bottom: 80px;
+  }
+
+  @include _660 {
+    margin-bottom: 49px;
   }
 
   &__card {
@@ -160,6 +169,10 @@ defineProps({
         padding-top: 64px;
         padding-bottom: 77px;
 
+      }
+
+      @include _660 {
+        padding: 40px 24px;
       }
 
       &__title {
@@ -199,11 +212,8 @@ defineProps({
   &__menage-block {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 110px;
+    align-items: center;
 
-    @include _1100 {
-      margin-bottom: 80px;
-    }
 
     &_pagination {
       color: #6B7680;

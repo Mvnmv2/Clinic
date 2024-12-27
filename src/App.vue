@@ -62,7 +62,7 @@ onUnmounted(() => {
 
       <StoriesBlock :width='width'/>
 
-<!--            <FormVisitBlock/>-->
+      <FormVisitBlock/>
 
       <!--      <SuspicionBlock/>-->
 
@@ -82,7 +82,7 @@ onUnmounted(() => {
 
   <!--    <PopularQuestionsBlock/>-->
 
-<!--      <Accordion/>-->
+  <!--      <Accordion/>-->
 
   <!--    <MoreDetailsBlock/>-->
 

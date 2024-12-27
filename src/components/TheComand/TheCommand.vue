@@ -184,7 +184,7 @@ const slides = [
 @import "@/assets/scss/variables.scss";
 
 .command__container {
-  margin-bottom: 64px;
+  //margin-bottom: 64px;
 }
 
 .swiper-container {

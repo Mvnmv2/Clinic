@@ -2,20 +2,17 @@
 import TheTag from '@/UI/TheTag.vue'
 import {ref} from "vue";
 
-const props = defineProps({
+defineProps({
   burger: Boolean
 })
 
 const openBurger = ref(false)
 
-
-function onClick(event) {
-  let elem = event.target
+function onClick() {
   openBurger.value = true
 }
 
-function closeBurger(event) {
-  let elem = event.target
+function closeBurger() {
   openBurger.value = false
 }
 
@@ -27,12 +24,11 @@ function closeBurger(event) {
     <div
         :class="['burger__openBtn', burger ? 'burger__openBtn-open' : '']"
         @click="onClick"
-
-    >Меню<span></span>
+        >Меню<span></span>
     </div>
 
-    <ul :class="['nav-list', burger ? 'burger' : '', openBurger ? 'burger-open' : 'burger-close']"
-
+    <ul :class="['nav-list', burger ? 'burger' : '',
+    openBurger ? 'burger-open' : 'burger-close']"
     >
 
       <li class="burger__closeBtn" @click="closeBurger">&#10005;</li>
@@ -79,14 +75,13 @@ function closeBurger(event) {
   </nav>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import "@/assets/scss/variables";
 
 .nav {
 
   width: 100%;
-
-  overflow: hidden;
+  position: relative;
 
   &-list {
     display: flex;
@@ -139,7 +134,7 @@ function closeBurger(event) {
     }
   }
 
-  &-item:nth-child(3) {
+  &-item:nth-child(4) {
 
     .nav-link {
       position: relative;
@@ -147,7 +142,12 @@ function closeBurger(event) {
       .tag {
         position: absolute;
         left: 150%;
-        top: -60%;
+        top: -50%;
+
+        @include _900 {
+          background-color: #fff;
+          color: #16A3D0;
+        }
       }
     }
 
@@ -155,7 +155,6 @@ function closeBurger(event) {
 }
 
 .nav-list.burger {
-
   display: flex;
   flex-direction: column;
 
@@ -188,7 +187,6 @@ function closeBurger(event) {
   }
 
   &.burger-open {
-
     transform: translateX(0);
     visibility: visible;
 
@@ -198,6 +196,7 @@ function closeBurger(event) {
     transform: translateX(100%);
     visibility: hidden;
   }
+
 }
 
 .burger__openBtn {

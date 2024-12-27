@@ -57,8 +57,7 @@ defineProps({
   grid-template-rows: repeat(2, 1fr);
   gap: 8px;
 
-  margin-bottom: 125px;
-
+  margin-bottom: 120px;
 
   @include _768 {
     grid-template-columns: repeat(2, 1fr);
@@ -85,8 +84,6 @@ defineProps({
         border-radius: 8px;
         object-fit: cover;
       }
-
-
     }
 
     &:nth-child(1) {

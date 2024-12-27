@@ -57,9 +57,7 @@ import TheButton from '../UI/TheButton.vue'
 @import "@/assets/scss/variables";
 
 .container {
-
   padding: 16px 0 32px;
-
 }
 
 .cardList {
@@ -78,6 +76,9 @@ import TheButton from '../UI/TheButton.vue'
   img {
     display: block;
     max-width: 100%;
+
+    object-fit: cover;
+    border-radius: 16px;
 
     @include _900 {
       min-height: 268px;
